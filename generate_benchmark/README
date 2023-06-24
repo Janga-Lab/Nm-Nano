@@ -11,7 +11,7 @@ Where
 ref.fa referes to the reference Genome file
 reads.fastq referes to the fastq reads file of a specific cell line.
 
-By runnung the command above, the main.py script will lunch several command lines for generating eventalign output. These commanad lines are included in generate_eventalign_output.txt
+By runnung the command above, the main.py script will lunch several command lines for generating eventalign output. These command lines are included in generate_eventalign_output.txt
 Meanwhile the main.py will call gen_coors_Nm.py for generating the coordinate file that will be input  together with the eventalign output to  extract_nm.py for generating the benchmark dataset
 
 Note:
