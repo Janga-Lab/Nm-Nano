@@ -20,13 +20,12 @@ Note:
 
 -The user should include the fast5 files folder (fast5_files) from which reads.fastq file was generated in the same path of main.py
 
--To allow user practicing with generating benchmark dataset, we include the following:
+-To allow user to practice with generating benchmark dataset, we include the following:
 
-1-A link in fast5_files folder  to sample fast5 files on Dropbox for the Hek293 cell line 
+1-A link to download a fast5 file sample for the Hek293 cell line that should be included in fast5_files folder that should be placed in the same path of main.py file.
 2-A sample of fastq files (reads.fastq) for Hek293 corresponding to the fast5 files in step1 
-3-A link to  sample of reference genome (ref.fa) on Dropbox
+3-A link to download a reference genome sample (ref.fa) that should be placed in the same path of main.py file. 
 4-A sample of bed file for Hek293 cell line (hek.bed.txt)
-5-The user should download the fast5 file folder from DropBox and place it in the same path of main.py file
-6-The user should download the reference genome sample file (ref.fa) from DropBox and place it in the same path of main.py file
+
 
 -
