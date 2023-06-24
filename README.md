@@ -39,4 +39,4 @@ python RF_embedding.py           #To run the RF with embeeding model
 # Note:
 - The user should include the benchmark dataset in the same path of test_xgboost.py and RF_embedding.py
 
-- All files required to generate the benchmark dataset is included in the generate_benchmark folder. For testing Nm-nano framework, we include a small benchmark dataset sample for Hela cell line. However, the user is free to generate a benchmark benchmark dataset for any other cell lines based on the instructions mentioned in README file in generate_benchmark folder.
+- All files required to generate the benchmark dataset is included in the generate_benchmark folder. To allow users to practice with Nm-nano predictors, we include a small benchmark dataset sample for Hela cell line. However, the user is free to generate a benchmark benchmark dataset for any other cell lines based on the instructions mentioned in README file in generate_benchmark folder.
