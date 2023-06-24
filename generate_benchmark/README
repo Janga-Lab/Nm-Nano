@@ -20,7 +20,7 @@ Note:
 
 -The user should include the fast5 files folder (fast5_files) from which reads.fastq file was generated in the same path of main.py
 
--TO allow user practicing with generating benchmark dataset, we include the following:
+-To allow user practicing with generating benchmark dataset, we include the following:
 
 1-A link in fast5_files folder  to sample fast5 files on Dropbox for the Hek293 cell line 
 2-A sample of fastq files (reads.fastq) for Hek293 corresponding to the fast5 files in step1 
