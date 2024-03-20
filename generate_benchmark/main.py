@@ -19,8 +19,9 @@ args = parser.parse_args()
 
 ref = args.ref_input
 fastq_reads = args.fastq_input
-
-
+if ref is None or fastq_reads is None:
+       print("You Must enter the reference genome and the fastq reads files")
+       exit(1) # to stop executing the remaining python code after this line.
 ##################################################################################
 #a=sys.argv[1]
 #b=sys.argv[2]
