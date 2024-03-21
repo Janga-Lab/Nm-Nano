@@ -23,18 +23,15 @@ if ref is None or fastq_reads is None:
        print("You Must enter the reference genome and the fastq reads files")
        exit(1) # to stop executing the remaining python code after this line.
 ##################################################################################
-#a=sys.argv[1]
-#b=sys.argv[2]
-f = open("hek.sam", "w")
-f1 = open("hek.bam", "w")
-f3 = open("hek-reads-ref.eventalign.txt", "w")
-####subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", "ref.fa", "reads.fastq"], stdout=f)    #minimap2 -ax map-ont --split-prefix /tmp/temp_name  ref.fa  reads.fastq > hek.sam
-subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", ref, fastq_reads], stdout=f) 
-subprocess.run(["nanopolish" ,"index", "-d", "fast5_files/", "reads.fastq"])   #nanopolish index -d fast5_files/ reads.fastq 
-subprocess.run(["samtools" ,"view", "-S", "-b", "hek.sam"],stdout=f1)#samtools view -S -b hek.sam > hek.bam 
-subprocess.run(["samtools" ,"sort", "hek.bam", "-o", "hek.sorted.bam"]) #samtools sort hek.bam -o hek.sorted.bam
-subprocess.run(["samtools" ,"index", "hek.sorted.bam"]) #samtools index hek.sorted.bam
-subprocess.run(["samtools","quickcheck" ,"hek.sorted.bam"]) #$samtools quickcheck hek.sorted.bam
-subprocess.run(["nanopolish","eventalign" ,"--reads", "reads.fastq", "--bam", "hek.sorted.bam","--genome", "ref.fa", "--scale-events"], stdout=f3) #$nanopolish eventalign  --reads reads.fastq --bam  hek.sorted.bam  --genome ref.fa --scale-events > hek-reads-ref.eventalign.txt
+with open('hek.sam','w') as f:
+    subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", ref, fastq_reads], stdout=f) 
+subprocess.run(["nanopolish" ,"index", "-d", "fast5_files/", "reads.fastq"])
+with open('hek.bam','w') as f1:
+    subprocess.run(["samtools" ,"view", "-S", "-b", "hek.sam"],stdout=f1)
+subprocess.run(["samtools" ,"sort", "hek.bam", "-o", "hek.sorted.bam"])
+subprocess.run(["samtools" ,"index", "hek.sorted.bam"])
+subprocess.run(["samtools","quickcheck" ,"hek.sorted.bam"])
+with open('hek-reads-ref.eventalign.txt','w') as f3:
+    subprocess.run(["nanopolish","eventalign" ,"--reads", "reads.fastq", "--bam", "hek.sorted.bam","--genome", "ref.fa", "--scale-events"], stdout=f3)
 subprocess.run(["python","gen_coors_Nm.py"])
 subprocess.run(["python","extract_nm.py",])
